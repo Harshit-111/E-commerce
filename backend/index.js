@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import userRoutes from "./routes/userRoutes.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
 //app
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //routes
 app.use("/api/users", userRoutes);
+app.use("/api/category", categoryRoutes);
 
 //starting
 connectDb(process.env.MONGO_URL);
